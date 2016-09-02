@@ -1,0 +1,23 @@
+<div class="member-container {{ include.columnClass }}">
+  <figure itemscope itemtype="http://schema.org/Person">
+    <img src="{{ member.img }}" alt="{{ member.name | append: ', ' | append: site.title }}" itemprop="image" />
+    <figcaption>
+    <h3 class="member-name" itemprop="name">{{ member.name }}</h3>
+    <h4 class="member-role" itemprop="jobTitle">{{ member.role }}</h4>
+    <span class="member-desc" itemprop="description">{{ member.description }}</span>
+    <a href="mailto:{{ member.email }}" title="{{ member.name | prepend: 'Email ' }}" itemprop="email">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <svg viewBox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+        <title>{{ member.name | prepend: 'Email ' }}</title>
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+          <g id="mail" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-1" sketch:type="MSShapeGroup" x="0" y="0" width="24" height="16"></rect>
+            <polygon id="Triangle-1" sketch:type="MSShapeGroup" transform="translate(12.000000, 6.200012) rotate(-180.000000) translate(-12.000000, -6.200012) " points="12 0.200012207 24 12.2000122 0 12.2000122 "></polygon>
+          </g>
+        </g>
+      </svg>
+    </a>
+    </figcaption>
+  </figure>
+</div>

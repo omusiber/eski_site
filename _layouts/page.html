@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="page">
+
+  <header class="page-header">
+    <div class="mask"></div>
+    <img src="{{ page.title | downcase | append: '.jpg' | prepend: '/images/featured/' | prepend: site.baseurl }}" alt="{{ page.title | append: ' featured image' }}" class="page-hero" />
+    <img src="{{ page.title | downcase | append: '-tn.jpg' | prepend: '/images/featured/' | prepend: site.baseurl }}" alt="{{ page.title | append: ' featured image' }}" class="mobile-hero" />
+    <div class="text-box">
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p>{{ page.description }}</p>
+    </div>
+  </header>
+  <div class="page-content">
+    {{ content }}
+  </div>
+
+</article>

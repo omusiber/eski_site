@@ -1,0 +1,87 @@
+---
+layout: page
+title: About
+description: "add a brief summary of your organization here" # Optional
+introduction: "This is the About page for your site. Add your introduction here. You'll find a guide to JekyllOrg on the homepage." # Optional
+permalink: /about/
+---
+<!-- About page introduction -->
+<p class="post-content collection-content">{{ page.introduction }}</p>
+<!-- End about page introduction -->
+<!-- Team members -->
+{% if site.data.team-members.size > 0 %}
+<section class="team-members">
+  <h2>Our Team</h2>
+  <div class="grid-container">
+    {% for member in site.data.team-members %}
+    {% comment %}Check whether total no. of staff members is odd / even and structure final member accordingly{% endcomment %}
+    {% assign columnMod = forloop.length | modulo:2 %}
+    {% if columnMod == 0 %}
+      {% cycle '<div class="row">', '' %}
+      <!-- Team member card -->
+      {% include staff-card.html columnClass='one-half col' %}<!-- End team member card -->
+
+      {% cycle '', '</div>' %}
+    {% else %}
+      {% unless forloop.last == true %}
+        {% cycle '<div class="row">', '' %}
+        <!-- Team member card -->
+        {% include staff-card.html columnClass='one-half col' %}<!-- End team member card -->
+
+        {% cycle '', '</div>' %}
+      {% else %}
+      <!-- Team member card -->
+        {% include staff-card.html columnClass='one-half col final-col' %}<!-- End team member card -->
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+  </div>
+</section>
+{% endif %}<!-- End team members -->
+<!-- Careers link -->
+{% if site.data.career-vacancies.size > 0 %}
+<a href="{{ '/careers' | prepend: site.baseurl }}" title="{{ site.title | prepend: 'Careers at '}}" class="careers-link">
+  <h2>we're hiring!</h2>
+  <p>{{ site.title | prepend: 'See all current vacancies at ' }}</p>
+</a><!-- End careers link -->
+{% endif %}
+
+{% if site.data.locations.size > 0 %}
+<!-- Office locations map -->
+<section class="office-locations">
+  <h2>Our Locations</h2>
+  <div class="map-container">
+    <div>
+      <div class="row">
+        <div id="aboutmap_wrapper">
+          <div id="map" style="width:100%; height:100%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End office locations map -->
+{% endif %}
+
+{% if site.email %}
+<!-- Contact form -->
+<section id="contact">
+    <h2>{{ site.title | prepend: 'Contact ' }}</h2>
+    <form action="//formspree.io/{{ site.email }}"
+    method="POST" class="formspree">
+      <input type="text" placeholder="your name" class="name" rows="1" required />
+
+      <input type="email" name="email" placeholder="your email" maxlength="36" pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+" class="email" required />
+
+      <textarea name="message" placeholder="your message" rows="3" class="message"></textarea>
+      <input type="hidden" name="_subject" value="Source: {{ site.baseurl | prepend: site.url }} contact form submission" />
+      <button type="submit" class="send">ok, send it</button>
+
+      <input type="text" name="_gotcha" style="display:none" />
+      <input type="hidden" name="_next" value="/" />
+    </form>
+  </section><!-- End form -->
+{% endif %}
+
+{% include mapjs.html %}
+
+{% include formjs.html %}

@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<article>
+  <!-- Service metas -->
+  <header class="page-header">
+    <div class="mask"></div>
+    <img src="{{ 'services.jpg' | prepend: '/images/featured/' | prepend: site.baseurl }}" alt="{{ page.title | append: ' featured image' }}" class="page-hero" />
+    <div class="text-box">
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p>{{ page.description }}</p>
+    </div>
+  </header><!-- End service metas -->
+  <!-- Social shares -->
+  {% include social-shares.html %}<!-- End social shares -->
+  <!-- Service content -->
+  <div class="post-content collection-content">
+    {{ content }}
+  </div><!-- End service content -->
+</article>
+<!-- Related services -->
+{% if page.related %}
+<section id="related-sections">
+  <h2>Related Services</h2>
+  <ul class="grid-container">
+  {% assign related = page.related %}
+    {% for service in site.services %}
+      {% if related contains service.title %}
+      <a href="{{ service.url | prepend: site.baseurl }}">
+        <li class="one-third col">
+          <div class="tn-container">
+            <img src="{{ '/images/featured/services-tn' | append: '.jpg' | prepend: site.baseurl }}">
+            <div class="mask"></div>
+            <div class="text-box">
+              <h2 class="related-title">{{ service.title }}</h2>
+              {% if service.description %}
+              <p>{{ service.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </li>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}<!-- End related services -->

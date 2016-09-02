@@ -1,0 +1,45 @@
+---
+layout: page
+title: Careers
+description: add a short introduction to your careers page here
+permalink: /careers/
+---
+{% for vacancy in site.data.career-vacancies %}
+<!-- Career vacancies index -->
+<ul class="careers-index">
+  <!-- Career vacancy listing -->
+  <li itemscope itemtype="jobPosting">
+    <h2 itemprop="title">{{ vacancy.title }}</h2>
+    {% include social-shares.html %}
+    <span class="salary" itemprop="baseSalary">{{ vacancy.salary }}</span>
+    <p class="vacancy-description" itemprop="description">{{ vacancy.description }}</p>
+    {% if vacancy.essential-criteria.size > 0 %}
+    <h3>Essential Criteria</h3>
+    <ol itemprop="qualifications skills">
+      {% for criterion in vacancy.essential-criteria %}
+      <li>
+        {{ criterion }}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+
+    {% if vacancy.essential-criteria.size > 0 %}
+    <h3>Desirable Criteria</h3>
+    <ol itemprop="qualifications skills">
+      {% for criterion in vacancy.desirable-criteria %}
+      <li>
+        {{ criterion }}
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% if vacancy.closing-date %}
+    <h3>Closing Date</h3>
+    <span class="closing-date">{{ vacancy.closing-date | date: "%b %-d, %Y" }}</span>
+    {% endif %}
+
+    <a href="mailto:{{ site.email | append: '' }}" class="button">Apply by Email</a>
+  </li><!-- End career vacancy listing -->
+</ul><!-- End career vacancies index -->
+{% endfor %}

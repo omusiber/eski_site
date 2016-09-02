@@ -1,0 +1,35 @@
+---
+layout: page
+title: Issues
+description: add a short introduction to the issues you address here
+permalink: /issues/
+related: services resources events
+---
+<section id="services-container">
+  <ul class="grid-container">
+  {% for issue in site.issues %}
+    {% unless issue.title == page.title %}
+    <a href="{{ issue.url | prepend: site.baseurl }}">
+      {% if forloop.length == 2 %}
+      <li class="one-whole col">
+      {% elsif forloop.length == 3 %}
+      <li class="one-half col">
+      {% else %}
+      <li class="one-third col">
+        {% endif %}
+        <div class="tn-container">
+          <img src="{{ page.title | downcase | append: '-tn.jpg' | prepend: '/images/featured/' | prepend: site.baseurl }}" alt="{{  }}" />
+          <div class="mask"></div>
+          <div class="text-box">
+            <h1>{{ issue.title }}</h1>
+            {% if issue.description %}<p>{{ issue.description }}</p>{% endif %}
+        </div>
+      </div>
+    </li>
+    </a>
+    {% endunless %}
+  {% endfor %}
+  </ul>
+</section>
+
+{% include related-sections.html %}

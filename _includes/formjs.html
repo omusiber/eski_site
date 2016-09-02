@@ -1,0 +1,40 @@
+<script>
+var message = new Object();
+message.loading = 'Sending...';
+message.success = "Got it, thanks! &#128521; We'll be in touch!";
+message.failure = "sorry, it didn't work &#128563;";
+
+var form = document.forms[0];
+
+var feedback = document.createElement('div');
+feedback.className = 'status';
+
+// Make the AJAX request
+var request = new XMLHttpRequest();
+request.open('POST', '//formspree.io/{{ site.email }}', true);
+request.setRequestHeader('accept', 'application/json');
+
+// Listen for form submission
+form.addEventListener('submit', function(evt) {
+  evt.preventDefault();
+  form.appendChild(feedback);
+
+// Create a new FormData object
+var formData = new FormData(form);
+
+// Send the formData
+request.send(formData);
+
+// Update the feedback according to request state
+request.onreadystatechange = function () {
+    if (request.readyState < 4)
+        feedback.innerHTML = message.loading;
+    else if (request.readyState === 4) {
+        if (request.status == 200 && request.status < 300)
+            feedback.className += ' success', feedback.innerHTML = message.success;
+        else
+            feedback.className += ' failure', feedback.innerHTML = message.failure;
+    }
+  }
+});
+</script>

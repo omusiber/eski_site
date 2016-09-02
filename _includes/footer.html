@@ -1,0 +1,33 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title }}</h2>
+    {% include social-profiles.html %}
+    <div class="footer-col-wrapper">
+      <nav class="footer-col footer-col-1">
+        {% assign columnLimit = site.data.nav-links.size | divided_by: 2 %}
+        {% for link in site.data.nav-links %}
+          {% if forloop.index <= columnLimit %}
+          <a href="{{ link.url | prepend: site.baseurl }}" class="footer-nav footer-nav-left">{{ link.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      <nav class="footer-col footer-col-2">
+        {% for link in site.data.nav-links %}
+          {% if forloop.index > columnLimit %}
+          <a href="{{ link.url | prepend: site.baseurl }}" class="footer-nav footer-nav-right">{{ link.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+  </div>
+
+  <span class="copyright">
+    &copy; {{ site.time | date: '%Y' }}
+  </span>
+
+  <span class="made-with">
+    Made with <a href="https://github.com/damianeoloan/JekyllOrg" target="_blank">JekyllOrg</a>
+  </span>
+</footer>

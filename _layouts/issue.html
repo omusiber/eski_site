@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<article>
+  <header class="page-header">
+    <div class="mask"></div>
+    <img src="{{ 'issues.jpg' | prepend: '/images/featured/' | prepend: site.baseurl }}" alt="{{ page.title | append: ' featured image' }}" class="page-hero" />
+    <div class="text-box">
+      <h1 class="page-title">{{ page.title }}</h1>
+      <p>{{ page.description }}</p>
+    </div>
+  </header>
+
+  {% include social-shares.html %}
+
+  <div class="post-content collection-content">
+    {{ content }}
+  </div>
+</article>
+<!-- Related services -->
+{% if page.related %}
+<section id="related-sections">
+  <h2>Related Issues</h2>
+  <ul class="grid-container">
+  {% assign related = page.related %}
+    {% for issue in site.issues %}
+      {% if related contains issue.title %}
+      <a href="{{ issue.url | prepend: site.baseurl }}">
+        <li class="one-third col">
+          <div class="tn-container">
+            <img src="{{ '/images/featured/issues-tn' | append: '.jpg' | prepend: site.baseurl }}">
+            <div class="mask"></div>
+            <div class="text-box">
+              <h2 class="related-title">{{ issue.title }}</h2>
+              {% if issue.description %}
+              <p>{{ issue.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </li>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

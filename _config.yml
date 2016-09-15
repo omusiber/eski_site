@@ -7,25 +7,25 @@
 
 # Site settings
 title: OmüSiber
-description: a free Jekyll theme for organizations and non-profits
+description: OMÜ | Siber Güvenlik Topluluğu
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://omusiber.github.io" # the base hostname & protocol for your site
+url: "http://omusiber.org" # the base hostname & protocol for your site
 
 # Profiles
 facebook_username: omusiber
 github_username: omusiber
-googleplus_username: randomexample
+#googleplus_username: randomexample
 instagram_username: omusiber
 linkedin_username: randomexample
-periscope_username: randomexample
-reddit_username: u/randomexample
+#periscope_username: randomexample
+#reddit_username: u/randomexample
 twitter_username: omusiber
-youtube_username: user/randomexample
+#youtube_username: user/randomexample
 email: siber@omu.edu.tr
 
 # API keys
 api_keys:
-  google: "AIzaSyBTrns7kOi-WxTG7d-IrwzApkn4JvlCL5c"
+  google: ""
 
 # Build settings
 markdown: kramdown
@@ -66,7 +66,7 @@ collections:
 
 # Prose
 prose:
-  siteurl: 'https://omusiber.github.io/'
+  siteurl: 'http://omusiber.org'
   media: 'images'
   ignore:
     - /_layouts

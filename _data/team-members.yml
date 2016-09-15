@@ -2,22 +2,22 @@
 
 # You can add images for each staff member to the 'team' folder in 'images'.
 
-- name:  Erin Herrmann
-  role: CEO
+- name:  Sinan Şahin
+  role: Başkan
   img: http://placehold.it/120x120
-  description: "Erin is a JekyllOrg co-founder and has been CEO for eight years."
-  email: erin@jekyllorg.com
-- name: 陈建国 Billy Chen
-  role: CFO
+  description: ""
+  email: sinan.sahin@omu.edu.tr
+- name: Ümmühan İlhan
+  role: Başkan Yardımcısı
   img: http://placehold.it/120x120
-  description: "Billy joined JekyllOrg as CFO in 2015."
-  email: darron@jekyllorg.com
-- name: Lavonna Rivero
+  description: ""
+  email: ummuhan.ilhan@bil.omu.edu.tr
+- name: Tülin Özen
   role: COO
   img: http://placehold.it/120x120
-  description: "Lavonna draws on 30 years experience in operational and executive roles."
+  description: ""
   email: lavonna@jekyllorg.com
-- name: Scot Gilliland
+- name: Sema Arslan
   role: CTO
   img: http://placehold.it/120x120
   description: "Scot is one of two co-founders at JekyllOrg, and CTO."

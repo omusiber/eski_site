@@ -48,16 +48,6 @@ jekyll-mentions: https://twitter.com
 
 # Collections
 collections:
-  services:
-    title: Services
-    featured-image:
-    permalink: /services/:path
-    output: true
-  issues:
-    title: Issues
-    featured-image:
-    permalink: /issues/:path
-    output: true
   events:
     title: Events
     featured-image:
@@ -89,40 +79,6 @@ prose:
         field:
           element: "textarea"
           placeholder: "Add your post title here"
-    /_services:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "service"
-      - name: "title"
-        field:
-          element: "textarea"
-          placeholder: "Add your service title here"
-      - name: "description"
-        field:
-          element: "textarea"
-          placeholder: "Add a short description of your service here"
-      - name: "related"
-        field:
-          element: "textarea"
-          placeholder: "Add the titles of related services here"
-    /_issues:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "issue"
-      - name: "title"
-        field:
-          element: "textarea"
-          placeholder: "Add a title for the issue you address here"
-      - name: "description"
-        field:
-          element: "textarea"
-          placeholder: "Add a short description of how you address the issue here"
-      - name: "related"
-        field:
-          element: "textarea"
-          placeholder: "Add the titles of related issues here"
     /_events:
       - name: "layout"
         field:

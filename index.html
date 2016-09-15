@@ -54,34 +54,7 @@ title: Home
 
     <a href="{{ '/blog/index.html' | prepend: site.baseurl }}" title="{{ site.title | prepend: 'Latest News from ' }}" class="button">See All News</a>
   </section><!-- End homepage news selection -->
-  <!-- Homepage services selection -->
-  <section id="services-container" class="homepage-services">
-    <a href="{{ '/services' | prepend: site.baseurl }}" title="{{ site.title | append: ' Services' }}">
-      <h2 class="home-header">Services</h2>
-    </a>
-    <ul class="grid-container">
-      {% for service in site.services limit:3 %}
-      <a href="{{ service.url | prepend: site.baseurl }}">
-        {% if forloop.length <= 2 %}
-        <li class="one-whole col">
-        {% else %}
-        <li class="one-third col{% if forloop.last == true %} final-col{% endif %}">
-        {% endif %}
-          <div class="tn-container">
-            <img src="{{ 'services-tn.jpg' | prepend: '/images/featured/' | prepend: site.baseurl }}" alt="{{  }}" />
-            <div class="mask"></div>
-            <div class="text-box">
-              <h1>{{ service.title }}</h1>
-              {% if service.description %}<p>{{ service.description }}</p>{% endif %}
-            </div>
-          </div>
-        </li>
-      </a>
-      {% endfor %}
 
-      <a href="{{ '/services' | prepend: site.baseurl }}" title="{{ site.title | prepend: 'See All ' | append: ' Services' }}" class="button home-button">See All Services</a>
-    </ul>
-  </section><!-- End homepage services selection -->
   <!-- Homepage events selection -->
   <section id="homepage-events">
     <ul class="events-index">
@@ -134,33 +107,5 @@ title: Home
     <a href="{{ '/events' | prepend: site.baseurl }}" title="{{ site.title | prepend: 'See All ' | append: ' Events' }}" class="button">See All Events</a>
   </section><!-- End homepage events selection -->
   <!-- Homepage issues selection -->
-  <section id="services-container" class="homepage-issues">
-    <a href="{{ '/issues' | prepend: site.baseurl }}" title="{{ site.title | append: ' Issues' }}">
-      <h2 class="home-header">Issues</h2>
-    </a>
-    <ul class="grid-container">
-    {% for issue in site.issues limit:3 %}
-      {% unless issue.title == page.title %}
-      <a href="{{ issue.url | prepend: site.baseurl }}">
-        {% if forloop.length <= 2 %}
-        <li class="one-whole col">
-        {% else %}
-        <li class="one-third col{% if forloop.last == true %} final-col{% endif %}">
-          {% endif %}
-          <div class="tn-container">
-            <img src="{{ 'issues-tn.jpg' | prepend: '/images/featured/' | prepend: site.baseurl }}" alt="{{  }}" />
-            <div class="mask"></div>
-            <div class="text-box">
-              <h1>{{ issue.title }}</h1>
-              {% if issue.description %}<p>{{ issue.description }}</p>{% endif %}
-          </div>
-        </div>
-      </li>
-      </a>
-      {% endunless %}
-    {% endfor %}
-    <a href="{{ '/issues' | prepend: site.baseurl }}" title="See All Issues" class="button home-button">See All Issues</a>
-
-    </ul>
-  </section><!-- End homepage issues selection -->
+  
 </div>

@@ -1,0 +1,114 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: OMÜ | Siber Güvenlik Topluluğu
+description: OMÜ | Siber Güvenlik Topluluğu
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://omusiber.org" # the base hostname & protocol for your site
+
+# Profiles
+facebook_username: omusiber
+github_username: omusiber
+#googleplus_username: randomexample
+instagram_username: omusiber
+linkedin_username: randomexample
+#periscope_username: randomexample
+#reddit_username: u/randomexample
+twitter_username: omusiber
+#youtube_username: user/randomexample
+email: siber@omu.edu.tr
+
+# API keys
+api_keys:
+  google: ""
+
+# Build settings
+markdown: kramdown
+
+# Gems
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-mentions
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Blog / news url
+permalink: /news/:title/
+
+# Mentions
+jekyll-mentions: https://twitter.com
+
+# Collections
+collections:
+  events:
+    title: Events
+    featured-image:
+    permalink: /events/:path
+    output: true
+
+# Prose
+prose:
+  siteurl: 'http://omusiber.org'
+  media: 'images'
+  ignore:
+    - /_layouts
+    - /_includes
+    - /_sass
+    - /css
+    - /_site
+    - Gemfile
+    - Gemfile.lock
+    - feed.xml
+    - /.sass-cache
+    - README.md
+  metadata:
+    /_posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
+      - name: "title"
+        field:
+          element: "textarea"
+          placeholder: "Add your post title here"
+    /_events:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "event"
+      - name: "title"
+        field:
+          element: "textarea"
+          placeholder: "Add a title for your event here"
+      - name: "description"
+        field:
+          element: "textarea"
+          placeholder: "Add a short description of your event here"
+      - name: "start-date"
+        field:
+          element: "textarea"
+          placeholder: "Add the event date / time in the format YYYY-MM-DD HH:MM"
+      - name: "end-date"
+        field:
+          element: "textarea"
+          placeholder: "You can optionally define an end date / time  for your event in the format YYYY-MM-DD HH:MM"
+      - name: "name"
+        field:
+          element: "textarea"
+          placeholder: "Street address, for display purposes only"
+      - name: "latitude"
+        field:
+          element: "textarea"
+          placeholder: "The latitude (usually first) value of the location"
+      - name: "longitude"
+        field:
+          element: "textarea"
+          placeholder: "The longitude (usually second) value of the location"

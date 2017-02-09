@@ -1,114 +1,86 @@
-# Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# This file contains configuration flags to customize your site
+#
 
-# Site settings
-title: OMÜ | Siber Güvenlik Topluluğu
-description: OMÜ | Siber Güvenlik Topluluğu
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://omusiber.org" # the base hostname & protocol for your site
+# Name of your site (displayed in the header)
+name: OMÜ | Siber Güvenlik Topluluğu
 
-# Profiles
-facebook_username: omusiber
-github_username: omusiber
-#googleplus_username: randomexample
-instagram_username: omusiber
-linkedin_username: randomexample
-#periscope_username: randomexample
-#reddit_username: u/randomexample
-twitter_username: omusiber
-#youtube_username: user/randomexample
-email: siber@omu.edu.tr
+# Short bio or description (displayed in the header)
+description: Siber Güvenlik Topluluğu
 
-# API keys
-api_keys:
-  google: ""
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://avatars0.githubusercontent.com/u/17524636
 
-# Build settings
-markdown: kramdown
+#
+# Flags below are optional
+#
 
-# Gems
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email:
+  facebook: omusiber
+  flickr:
+  github: omusiber
+  instagram: omusiber
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: omusiber
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus:
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics:
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
+url:
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
+#
+# !! You don't need to change any of the configuration flags below !!
+#
+
+permalink: /:title/
+
+# The release of Jekyll Now that you're using
+version: v1.2.0
+
+# Jekyll 3 now only supports Kramdown for Markdown
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+# Use the following plug-ins
 gems:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-mentions
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
 
-# Pagination
-paginate: 10
-paginate_path: "/blog/page:num/"
-
-# Blog / news url
-permalink: /news/:title/
-
-# Mentions
-jekyll-mentions: https://twitter.com
-
-# Collections
-collections:
-  events:
-    title: Events
-    featured-image:
-    permalink: /events/:path
-    output: true
-
-# Prose
-prose:
-  siteurl: 'http://omusiber.org'
-  media: 'images'
-  ignore:
-    - /_layouts
-    - /_includes
-    - /_sass
-    - /css
-    - /_site
-    - Gemfile
-    - Gemfile.lock
-    - feed.xml
-    - /.sass-cache
-    - README.md
-  metadata:
-    /_posts:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "post"
-      - name: "title"
-        field:
-          element: "textarea"
-          placeholder: "Add your post title here"
-    /_events:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "event"
-      - name: "title"
-        field:
-          element: "textarea"
-          placeholder: "Add a title for your event here"
-      - name: "description"
-        field:
-          element: "textarea"
-          placeholder: "Add a short description of your event here"
-      - name: "start-date"
-        field:
-          element: "textarea"
-          placeholder: "Add the event date / time in the format YYYY-MM-DD HH:MM"
-      - name: "end-date"
-        field:
-          element: "textarea"
-          placeholder: "You can optionally define an end date / time  for your event in the format YYYY-MM-DD HH:MM"
-      - name: "name"
-        field:
-          element: "textarea"
-          placeholder: "Street address, for display purposes only"
-      - name: "latitude"
-        field:
-          element: "textarea"
-          placeholder: "The latitude (usually first) value of the location"
-      - name: "longitude"
-        field:
-          element: "textarea"
-          placeholder: "The longitude (usually second) value of the location"
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME

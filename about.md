@@ -1,15 +1,13 @@
 ---
 layout: page
-title: About
+title: Hakkımızda
 permalink: /about/
 ---
 
-Some information about you!
+### Ondokuz Mayıs Üniversitesi'nde siber güvenlik alanında kendini geliştirmek isteyen herkese kapımız açık! 
 
-### More Information
+Amacımız içinde bulunduğumuz digital çağın en önemli gereklerinden biri olan siber güvenlik alanında kendimizi geliştirmektir.  
 
-A place to include any other types of information that you'd like to include about yourself.
+### İletişim
 
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+[siber@omu.edu.tr](mailto:siber@omu.edu.tr)

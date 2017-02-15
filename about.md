@@ -6,7 +6,7 @@ permalink: /about/
 
 ### Ondokuz Mayıs Üniversitesi'nde siber güvenlik alanında kendini geliştirmek isteyen herkese kapımız açık! 
 
-Amacımız içinde bulunduğumuz digital çağın en önemli gereklerinden biri olan siber güvenlik alanında kendimizi geliştirmektir.  
+Topluluk hakkında detaylar için [tıklayınız.](http://topluluk.omu.edu.tr/clubs/70)
 
 ### İletişim
 
